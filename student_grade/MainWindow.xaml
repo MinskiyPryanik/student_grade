@@ -1,0 +1,38 @@
+﻿<Window x:Class="student_grade.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:student_grade"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize">
+    <Grid>
+        <Grid x:Name="upShowButton" Background="Gray" HorizontalAlignment="Center" VerticalAlignment="Top" Width="800" Height="70" Margin="0,-14,0,0">
+            <TextBlock Grid.Column="0" Text="Имя" Foreground="Black" Margin="18,52,647,4" FontFamily="Yu Gothic UI Semibold"/>
+            <TextBlock Grid.Column="0" Text="Фамилия" Foreground="Black" Margin="185,52,465,4" FontFamily="Yu Gothic UI Semibold"/>
+            <TextBlock Grid.Column="0" Text="Отчество" Foreground="Black" Margin="374,52,276,4" FontFamily="Yu Gothic UI Semibold"/>
+            <TextBlock Grid.Column="0" Text="Мат." Foreground="Black" Margin="550,52,210,4" FontFamily="Yu Gothic UI Semibold"/>
+            <TextBlock Grid.Column="0" Text="Инф." Foreground="Black" Margin="595,52,165,4" FontFamily="Yu Gothic UI Semibold"/>
+            <TextBlock Grid.Column="0" Text="Физ." Foreground="Black" Margin="640,52,120,4" FontFamily="Yu Gothic UI Semibold"/>
+            <TextBox x:Name="MathGrade" Grid.Column="0" Margin="550,20,210,20" FontFamily="Yu Gothic UI Semibold" MaxLength="1"/>
+            <TextBox x:Name="InfoGrade" Grid.Column="0" Margin="595,20,165,20" FontFamily="Yu Gothic UI Semibold" MaxLength="1"/>
+            <TextBox x:Name="PhysGrade" Grid.Column="0" Margin="640,20,120,20" FontFamily="Yu Gothic UI Semibold" MaxLength="1"/>
+            <TextBox x:Name="NameS" Grid.Column="0" Margin="18,20,647,20" FontFamily="Yu Gothic UI Semibold" MaxLength="50"/>
+            <TextBox x:Name="LastNameS" Grid.Column="0" Width="150" Margin="185,20,465,20" FontFamily="Yu Gothic UI Semibold" MaxLength="50"/>
+            <TextBox x:Name="PatronymeS" Grid.Column="0" Width="150" Margin="374,20,276,20" FontFamily="Yu Gothic UI Semibold" MaxLength="50"/>
+            <Button x:Name="addStudentButton" Content="Добавить" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="700,0,0,0" Height="32" Width="76" Click="addStudentButton_Click" FontFamily="Yu Gothic UI Semibold"/>
+        </Grid>
+        <DataGrid x:Name="StudentListDG" Margin="0,56,263,0" IsReadOnly="True" CanUserResizeColumns="False" CanUserAddRows="False" AutoGenerateColumns="False" FontFamily="Yu Gothic UI Semibold">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="nameS" Header="Имя" Width="Auto" Binding="{Binding Name}"/>
+                <DataGridTextColumn x:Name="lnameS" Header="Фамилия" Width="Auto" Binding="{Binding LName}"/>
+                <DataGridTextColumn x:Name="pnameS" Header="Отчество" Width="Auto" Binding="{Binding PName}"/>
+                <DataGridTextColumn x:Name="mathG" Header="Математика" Width="Auto" Binding="{Binding Math}"/>
+                <DataGridTextColumn x:Name="infoG" Header="Информатика" Width="Auto" Binding="{Binding Info}"/>
+                <DataGridTextColumn x:Name="physG" Header="Физика" Width="Auto" Binding="{Binding Phys}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="saveStudent" Content="Сохранить" HorizontalAlignment="Right" Margin="0,139,32,217" Width="200" Click="saveStudent_Click" FontFamily="Yu Gothic UI Semibold" FontSize="14"/>
+        <Button x:Name="loadStudent" Content="Загрузить" HorizontalAlignment="Right" Margin="0,260,32,96" Width="200" Click="loadStudent_Click" FontFamily="Yu Gothic UI Semibold" FontSize="14"/>
+    </Grid>
+</Window>
